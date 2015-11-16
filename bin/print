@@ -1,0 +1,8 @@
+#!/bin/bash
+banner=$1
+filename=$2.html
+outname=$2.pdf
+/usr/local/bin/wkhtmltopdf -q -T 40 -B 10 -L 10 -R 10 --footer-line --footer-left "$banner" --header-line --header-left  "$banner" $filename $outname
+/usr/bin/lp $outname
+rm $outname
+rm $filename

@@ -1,0 +1,12 @@
+body {
+    /*background-color: #333333;*/
+}
+
+.contestant-info {
+    border-radius : 10px;
+    background-color: #77AAFF;
+}
+
+#standings-table {
+    top:0;
+}

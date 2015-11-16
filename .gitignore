@@ -1,0 +1,11 @@
+.idea/
+*.iml
+.idea/workspace.xml
+submissions/
+etc/common-config.php
+etc/*.secret
+log/*
+run/*
+tmp/*
+*.custom.php
+assets/custom
