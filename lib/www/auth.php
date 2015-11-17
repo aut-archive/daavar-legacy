@@ -143,7 +143,7 @@ function show_loginpage($err_message = null)
             include(LIBWWWDIR . '/header.php');
             ?>
 
-            <div id="login">
+
                 <div class="container">
 
                     <form class="form-signin" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
@@ -179,7 +179,7 @@ function show_loginpage($err_message = null)
 
                 </div>
 
-            </div>
+
 
 
             <?php
