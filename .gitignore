@@ -1,7 +1,6 @@
 .idea/
 *.iml
 .idea/workspace.xml
-submissions/*
 etc/common-config.php
 etc/*.secret
 log/*
