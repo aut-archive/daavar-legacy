@@ -138,7 +138,7 @@ if (isset($_REQUEST['dosignup'])) {
                 </div>
                 <div class="modal-body">
 
-                    <form class="form-signin" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+                    <form class="form-signin" action="." method="post">
                         <input type="hidden" name="dosignup"/>
 
                         <div class="control-group">

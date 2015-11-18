@@ -626,7 +626,7 @@ function createUser($username, $password, $email, $teamid, $enabled = true, $ful
 {
     global $DB;
 
-    $DB->q('INSERT INTO `judge`.`user` (`username`, `name`, `email`, `last_ip_address`,
+    $DB->q('INSERT INTO `user` (`username`, `name`, `email`, `last_ip_address`,
      `password`, `enabled`, `teamid`) VALUES (%s, %s , %s, %s,%s, %s, %s);',
         $username, $full_name, $email, $IP, md5($username . '#' . $password), $enabled, $teamid);
 
@@ -637,7 +637,7 @@ function createUser($username, $password, $email, $teamid, $enabled = true, $ful
 
     if($sendEmail){
         $msg = '
-                    Your username just made in AUTJudge system :) <br>
+                    Your username just made in Daavar system :) <br>
                     <a href="' . site_url . '">' . site_url . '</a><br><br>' . '
                     User name : ' . $username . '<br>
                     Password : '.$password.'<br>
