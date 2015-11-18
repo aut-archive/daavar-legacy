@@ -341,11 +341,6 @@ function do_login($dont_redirect = false)
 
         logged_in(); // fill userdata
 
-        $cdata = getCurContest(TRUE);
-        if (checkrole('team') && $cdata['enabled'] && !calcFreezeData($cdata)['cstarted']) {
-            header('Location: ../public/countdown');
-            exit;
-        }
 
         if (preg_match('/\/public\/login.*$/', $_SERVER['PHP_SELF'])) {
             if (checkrole('jury') || checkrole('balloon')) {
