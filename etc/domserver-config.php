@@ -2,6 +2,10 @@
 
 if (!@include_once("common-config.php")) die("Please create etc/common-config.php file!");
 
+// Error Level
+error_reporting(E_ALL & ~E_NOTICE); // By default report all PHP errors, except notices.
+if (DEBUG & DEBUG_PHP_NOTICE) error_reporting(E_ALL); // Set error reporting to all in debugging mode
+
 // Authentication scheme to be used for teams. The following methods
 // are supported:
 // IPADDRESS

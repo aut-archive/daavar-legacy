@@ -69,17 +69,17 @@ if (isset($_REQUEST['reset'])) {
                     <br><br><br>
                     <button class="btn btn-primary" onclick="document.location='forget.php'">Reset my password</button>
                 <?php else : ?>
-                <h3>Your password has been successfully changed !</h3>
+                    <h3>Your password has been successfully changed !</h3>
                     <br><br>
-                        Username : <b><?php echo $reset_username ?></b><br>
-                        Your new password is : <b><?php echo $newpassword ?></b><br>
-                        <br><br>
+                    Username : <b><?php echo $reset_username ?></b><br>
+                    Your new password is : <b><?php echo $newpassword ?></b><br>
+                    <br><br>
 
-                        <div style="text-align: center;">
-                            <a href="../team/edit_profile">Go to my profile</a>
-                        </div>
-                        <br>
-                        <?php endif; ?>
+                    <div style="text-align: center;">
+                        <a href="../team/edit_profile">Go to my profile</a>
+                    </div>
+                    <br>
+                <?php endif; ?>
             </div>
         </div>
     </div>
@@ -147,7 +147,7 @@ if (isset($_REQUEST['sendCode'])) {
     unset($_SESSION['captcha']);
     ?>
 
-    <div id="login">
+
         <div class="container">
             <div class="form-signin">
                 <?php if (!$msg): ?>
@@ -171,54 +171,65 @@ if (isset($_REQUEST['sendCode'])) {
 } //End send code
 
 ?>
-<div id="login">
-    <div class="container">
-        <form class="form-signin" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
-            <input type="hidden" name="sendCode"/>
 
-            <h3 class="form-signin-heading">Forget your password ?</h3>
-            <br>
-            <?php if ($err_message) echo "<div class='alert alert-error'>$err_message</div>" ?>
-            <br>
+<div class="container">
 
-            <div class="control-group">
-                <label class="control-label" for="email">* Registered email:</label>
+    <div class="modal modal-visible">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        Reset password
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-signin" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+                        <input type="hidden" name="sendCode"/>
+                        <br>
+                        <?php if ($err_message) echo "<div class='alert alert-error'>$err_message</div>" ?>
+                        <br>
 
-                <div class="controls">
-                    <input class="input-xlarge" id="email" name="email" type="email" required="required"
-                           placeholder="Your Email">
+                        <div class="control-group">
+                            <label class="control-label" for="email">* Registered email:</label>
+
+                            <div class="controls">
+                                <input class="form-control" id="email" name="email" type="email" required="required"
+                                       placeholder="Your Email">
+                            </div>
+                        </div>
+
+                        <?php
+                        //Security question
+                        $a = rand(10, 50);
+                        $b = rand(15, 40);
+                        $c = $a + $b;
+                        $_SESSION['captcha'] = $c;
+                        $question = "$a + $b = ?";
+                        ?>
+                        <div class="control-group">
+                            <label class="control-label noselect" for="captcha"><?php echo $question ?></label>
+
+                            <div class="controls">
+                                <input class="form-control" id="captcha" name="captcha" type="text" required="required"
+                                       pattern="^\d+$">
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div style="text-align: center;">
+                            <button class="btn btn-danger btn-block" type="submit">Reset my password</button>
+                        </div>
+
+                        <br>
+                        <?php if (AllowSignup): ?>
+                            <br><a href="signup">New user?</a>
+                        <?php endif ?>
+                        <br><a href="login">Did you remember your password ?</a>
+                    </form>
                 </div>
             </div>
-
-            <?php
-            //Security question
-            $a = rand(10, 50);
-            $b = rand(15, 40);
-            $c = $a + $b;
-            $_SESSION['captcha'] = $c;
-            $question = "$a + $b = ?";
-            ?>
-            <div class="control-group">
-                <label class="control-label noselect" for="captcha"><?php echo $question ?></label>
-
-                <div class="controls">
-                    <input class="input-xlarge" id="captcha" name="captcha" type="text" required="required"
-                           pattern="^\d+$">
-                </div>
-            </div>
-
-
-            <div style="text-align: center;">
-                <button class="btn btn-danger" type="submit">Reset my password</button>
-            </div>
-
-            <br>
-            <?php if (AllowSignup): ?>
-                <br><a href="signup">New user?</a>
-            <?php endif ?>
-            <br><a href="login">Did you remember your password ?</a>
-        </form>
-
+        </div>
 
     </div>
 

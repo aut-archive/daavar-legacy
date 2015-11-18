@@ -84,6 +84,11 @@ require_once 'init.php';
                                 <a tabindex="-1" href="user.php?id=<?php echo $userdata['userid'] ?>">Profile</a>
                             <?php endif ?>
                         </li>
+
+                        <li>
+                            <?php include LIBWWWDIR.'/notify.php'; ?>
+                        </li>
+
                         <li class="divider"></li>
                         <li>
                             <a tabindex="-1" href="../auth/logout.php">Logout</a>
@@ -95,14 +100,5 @@ require_once 'init.php';
         </div>
     </div>
 </div>
-
-
-<?php
-
-$notify_flag = isset($_COOKIE["domjudge_notify"]) && (bool)$_COOKIE["domjudge_notify"];
-$refresh_flag = !isset($_COOKIE["domjudge_refresh"]) || (bool)$_COOKIE["domjudge_refresh"];
-
-
-?>
 
 <div class="container main-container">

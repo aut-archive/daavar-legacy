@@ -145,36 +145,57 @@ function show_loginpage($err_message = null)
 
             <div class="container">
 
-                <form class="form-signin" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
-                    <h3 class="form-signin-heading">Welcome to <span>Daavar</span></h3>
-                    <br>
+                <div class="modal modal-visible">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">
+                                    <i class="glyphicon glyphicon-user"></i>
+                                    Sign in
+                                </h4>
+                            </div>
+                            <div class="modal-body">
 
-                    <?php if ($err_message) echo "<div class='alert alert-error'>$err_message</div>" ?>
-                    <br>
+                                <form class="form-signin" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+                                    <input class="form-control" type="hidden" name="cmd" value="login"/>
+                                    <div class="form-group">
+                                        <label>Username</label>
+                                        <input type="text" class="form-control input-block-level" placeholder="Username"
+                                               id="login"
+                                               name="login"
+                                               value="" size="15" maxlength="15" accesskey="l"
+                                               autofocus>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Password</label>
+                                        <input type="password" class="form-control input-block-level" type="password"
+                                               id="passwd" name="passwd" value="" size="15" maxlength="255"
+                                               accesskey="p"
+                                               placeholder="Password">
+                                    </div>
 
-                    <input  class="form-control" type="hidden" name="cmd" value="login"/>
+                                    <?php if ($err_message) echo "<div class='alert alert-warning'> $err_message</div>" ?>
 
-                    <input type="text" class="form-control input-block-level" placeholder="Username" id="login" name="login"
-                           value="" size="15" maxlength="15" accesskey="l"
-                           autofocus>
+                                    <div class="form-group">
+                                        <div style="text-align: center;">
+                                            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
 
-                    <input type="password" class="form-control input-block-level" type="password" id="passwd" name="passwd"
-                           value="" size="15" maxlength="255"
-                           accesskey="p" placeholder="Password">
-
-                    <div style="text-align: center;">
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                                <?php if (AllowSignup): ?>
+                                    <br><a href="signup">New user?</a>
+                                <?php endif ?>
+                                <?php if (AllowForget): ?>
+                                    <br><a href="forget">Forgot your password?</a>
+                                <?php endif ?>
+                            </div>
+                        </div>
                     </div>
-
-                    <?php if (AllowSignup): ?>
-                        <br><a href="signup">New user?</a>
-                    <?php endif ?>
-                    <?php if (AllowForget): ?>
-                        <br><a href="forget">Forget your password?</a>
-                    <?php endif ?>
-
-                </form>
-
+                </div>
 
             </div>
 
