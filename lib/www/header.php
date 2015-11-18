@@ -34,7 +34,7 @@ if (!isset($menu)) {
 
     <meta charset="<?php echo DJ_CHARACTER_SET ?>"/>
 
-    <title><?php echo $pagename . '_' . (isset($title) && $title) ? $title : $currPage ?></title>
+    <title><?php echo $pagename . '_' . (isset($title) && $title) ? $title : 'Daavar Judge' ?></title>
 
     <link rel="icon" href="../assets/images/favicon.png" type="image/png"/>
 
