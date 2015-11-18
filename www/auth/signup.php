@@ -18,7 +18,6 @@ if (!AllowSignup) {
 }
 
 
-
 define('ID_REGEX', '/^' . IDENTIFIER_CHARS . '+$/');
 
 
@@ -78,7 +77,7 @@ if (isset($_REQUEST['dosignup'])) {
         goto showmessage;
     }
 
-    createUserAndTeam($username,$teamname,$password,$email,SignupDefaultCategory,SignupDefaultUserRole,$enabled,$members,$description,$IP);
+    createUserAndTeam($username, $teamname, $password, $email, SignupDefaultCategory, SignupDefaultUserRole, $enabled, $members, $description, $IP);
 
     showmessage:
     unset($_SESSION['captcha']);
@@ -128,16 +127,18 @@ if (isset($_REQUEST['dosignup'])) {
                 <label class="control-label" for="email">*Username:</label>
 
                 <div class="controls">
-                    <input class="form-control input-xlarge" id="username" name="username" type="text" required="required"
+                    <input class="form-control input-xlarge" id="username" name="username" type="text"
+                           required="required"
                            placeholder="only letters,numbers and _" pattern="^[a-zA-Z0-9_-]+$">
                 </div>
             </div>
 
             <div class="control-group">
-                <label class="form-control control-label" for="password">*Password :</label>
+                <label class="control-label" for="password">*Password :</label>
 
                 <div class="controls">
-                    <input class="form-control input-xlarge" id="password" name="password" type="password" required="required"
+                    <input class="form-control input-xlarge" id="password" name="password" type="password"
+                           required="required"
                            placeholder="choose a strong one">
                 </div>
             </div>
@@ -156,7 +157,8 @@ if (isset($_REQUEST['dosignup'])) {
                 <label class="control-label" for="teamname">*Team name :</label>
 
                 <div class="controls">
-                    <input class="form-control input-xlarge" id="teamname" name="teamname" type="text" required="required"
+                    <input class="form-control input-xlarge" id="teamname" name="teamname" type="text"
+                           required="required"
                            placeholder="something cool">
                 </div>
             </div>
