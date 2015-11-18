@@ -148,23 +148,34 @@ if (isset($_REQUEST['sendCode'])) {
     ?>
 
 
+    <div class="container">
         <div class="container">
-            <div class="form-signin">
-                <?php if (!$msg): ?>
-                    Instructions to reset your password has been sent to your email address.<br><br>
-                    Check your inbox (this email may be moved to spam folder)<br><br>
-                    <br>
-                <?php else: ?>
-                    An error occurred :<br><br>
-                    <?php echo $msg ?>
-                    <br><br><br>
-                    <button class="btn btn-primary" onclick="history.back()"> Try again
-                    </button>
-                <?php endif ?>
+            <div class="modal modal-visible">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">
+                                Reset password
+                            </h4>
+                        </div>
+                        <div class="modal-body">
+                            <?php if (!$msg): ?>
+                                Instructions to reset your password has been sent to your email address.<br><br>
+                                Check your inbox (this email may be moved to spam folder)<br><br>
+                                <br>
+                            <?php else: ?>
+                                An error occurred :<br><br>
+                                <?php echo $msg ?>
+                                <br><br><br>
+                                <button class="btn btn-primary" onclick="history.back()"> Try again
+                                </button>
+                            <?php endif ?>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
     <?php
     require(LIBWWWDIR . '/footer.php');
     exit;
@@ -183,7 +194,7 @@ if (isset($_REQUEST['sendCode'])) {
                     </h4>
                 </div>
                 <div class="modal-body">
-                    <form class="form-signin" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+                    <form class="form-signin" action="" method="post">
                         <input type="hidden" name="sendCode"/>
                         <br>
                         <?php if ($err_message) echo "<div class='alert alert-error'>$err_message</div>" ?>
