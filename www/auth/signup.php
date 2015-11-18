@@ -48,7 +48,7 @@ if (isset($_REQUEST['dosignup'])) {
 
     if (!isset($_SESSION['captcha']) || $captcha != $_SESSION['captcha']) {
         $msg = 'Invalid answer to security question!';
-//        $msg.=$captcha.'/'.$_SESSION['captcha'];
+        $msg.=$captcha.'/'.$_SESSION['captcha'];
         goto showmessage;
     }
 

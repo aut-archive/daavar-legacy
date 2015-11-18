@@ -9,7 +9,7 @@ define('SUBMITCLIENT_ENABLED', 'yes');
 define('productName', 'Daavar');
 define('version', '4.0');
 
-define('SHOW_ERRORS', false);
+define('SHOW_ERRORS', true);
 
 define('AllowSignup', true);
 define('AllowForget', true);
@@ -25,8 +25,9 @@ define('ShowOtherTeamSubmissions', true);
 
 define('MaxSubmissions', 20);
 
-define('site_url', 'http://judge.autcontest.ir/'); //Must end with trailing slash
+define('site_url', 'http://daavar.icpc.aut.ac.ir/test'.'/');
 
 //can be false
 define('homepage_url', 'http://icpc.aut.ac.ir');
-define('sender_email', 'icpc@aut.ac.ir');
+define('sender_email', 'AUT ICPC Daavar Judge <icpc@aut.ac.ir>');
+~
