@@ -25,14 +25,14 @@ if (isset($id)) {
         $username =& $team_user['username'];
 
         $msg = '
-                    Your team has been approved in AUTJudge system :) <br>
+                    Your team has been approved :) <br>
                     You can now login :<br>
                     <a href="' . site_url . '">' . site_url . '</a><br><br>' . '
                     User name : ' . $username . '<br>
                     Password : [as you set]<br>
             ';
 
-        JSendEmail($msg, 'ACM Contest - Team approved', $email);
+        JSendEmail($msg, 'Team approved', $email);
     }
 
 }

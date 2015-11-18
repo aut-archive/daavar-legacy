@@ -156,7 +156,7 @@ function show_loginpage($err_message = null)
                             </div>
                             <div class="modal-body">
 
-                                <form class="form-signin" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+                                <form class="form-signin" action="signin" method="post">
                                     <input class="form-control" type="hidden" name="cmd" value="login"/>
                                     <div class="form-group">
                                         <label>Username</label>

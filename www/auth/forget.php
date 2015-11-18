@@ -61,28 +61,41 @@ if (isset($_REQUEST['reset'])) {
     showmessage2:
     require(LIBWWWDIR . '/header.php');
     ?>
-    <div id="login">
-        <div class="container">
-            <div class="form-signin">
-                <?php if (!$ok) : ?>
-                    <br>Oops !<br>
-                    <br><br><br>
-                    <button class="btn btn-primary" onclick="document.location='forget.php'">Reset my password</button>
-                <?php else : ?>
-                    <h3>Your password has been successfully changed !</h3>
-                    <br><br>
-                    Username : <b><?php echo $reset_username ?></b><br>
-                    Your new password is : <b><?php echo $newpassword ?></b><br>
-                    <br><br>
 
-                    <div style="text-align: center;">
-                        <a href="../team/edit_profile">Go to my profile</a>
+    <div class="container">
+        <div class="modal modal-visible">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">
+                            Reset password
+                        </h4>
                     </div>
-                    <br>
-                <?php endif; ?>
+                    <div class="modal-body">
+
+                        <?php if (!$ok) : ?>
+                            <br>Oops !<br>
+                            <br><br><br>
+                            <button class="btn btn-primary" onclick="document.location='forget'">Reset my password
+                            </button>
+                        <?php else : ?>
+                            <h3>Your password has been successfully changed !</h3>
+                            <br><br>
+                            Username : <b><?php echo $reset_username ?></b><br>
+                            Your new password is : <b><?php echo $newpassword ?></b><br>
+                            <br><br>
+
+                            <div style="text-align: center;">
+                                <a href="../team/edit_profile">Go to my profile</a>
+                            </div>
+                            <br>
+                        <?php endif; ?>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
     <?php
     require(LIBWWWDIR . '/footer.php');
     exit;

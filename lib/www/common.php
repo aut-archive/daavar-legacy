@@ -642,6 +642,6 @@ function createUser($username, $password, $email, $teamid, $enabled = true, $ful
                     User name : ' . $username . '<br>
                     Password : '.$password.'<br>
             ';
-        JSendEmail($msg,'ACM Contest - User created',$email);
+        JSendEmail($msg,'User Successfully Created',$email);
     }
 }
