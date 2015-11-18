@@ -48,7 +48,7 @@ if (isset($_REQUEST['dosignup'])) {
 
     if (!isset($_SESSION['captcha']) || $captcha != $_SESSION['captcha']) {
         $msg = 'Invalid answer to security question!';
-        $msg.=$captcha.'/'.$_SESSION['captcha'];
+//        $msg.=$captcha.'/'.$_SESSION['captcha'];
         goto showmessage;
     }
 
@@ -138,7 +138,7 @@ if (isset($_REQUEST['dosignup'])) {
                 </div>
                 <div class="modal-body">
 
-                    <form class="form-signin" action="" method="post">
+                    <form class="form-signin" action="signup" method="post">
                         <input type="hidden" name="dosignup"/>
 
                         <div class="control-group">

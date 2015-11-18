@@ -194,7 +194,7 @@ if (isset($_REQUEST['sendCode'])) {
                     </h4>
                 </div>
                 <div class="modal-body">
-                    <form class="form-signin" action="" method="post">
+                    <form class="form-signin" action="forget" method="post">
                         <input type="hidden" name="sendCode"/>
                         <br>
                         <?php if ($err_message) echo "<div class='alert alert-error'>$err_message</div>" ?>
