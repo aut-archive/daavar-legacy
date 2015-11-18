@@ -143,43 +143,40 @@ function show_loginpage($err_message = null)
             include(LIBWWWDIR . '/header.php');
             ?>
 
+            <div class="container">
 
-                <div class="container">
+                <form class="form-signin" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+                    <h3 class="form-signin-heading">Welcome to <span>Daavar</span></h3>
+                    <br>
 
-                    <form class="form-signin" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
-                        <h3 class="form-signin-heading">Welcome to <span>AUTJudge</span></h3>
-                        <br>
+                    <?php if ($err_message) echo "<div class='alert alert-error'>$err_message</div>" ?>
+                    <br>
 
-                        <?php if ($err_message) echo "<div class='alert alert-error'>$err_message</div>" ?>
-                        <br>
+                    <input  class="form-control" type="hidden" name="cmd" value="login"/>
 
-                        <input type="hidden" name="cmd" value="login"/>
+                    <input type="text" class="form-control input-block-level" placeholder="Username" id="login" name="login"
+                           value="" size="15" maxlength="15" accesskey="l"
+                           autofocus>
 
-                        <input type="text" class="input-block-level" placeholder="Username" id="login" name="login"
-                               value="" size="15" maxlength="15" accesskey="l"
-                               autofocus>
+                    <input type="password" class="form-control input-block-level" type="password" id="passwd" name="passwd"
+                           value="" size="15" maxlength="255"
+                           accesskey="p" placeholder="Password">
 
-                        <input type="password" class="input-block-level" type="password" id="passwd" name="passwd"
-                               value="" size="15" maxlength="255"
-                               accesskey="p" placeholder="Password">
+                    <div style="text-align: center;">
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                    </div>
 
-                        <div style="text-align: center;">
-                            <button class="btn btn-success" type="submit">Sign in</button>
-                        </div>
+                    <?php if (AllowSignup): ?>
+                        <br><a href="signup">New user?</a>
+                    <?php endif ?>
+                    <?php if (AllowForget): ?>
+                        <br><a href="forget">Forget your password?</a>
+                    <?php endif ?>
 
-                        <?php if (AllowSignup): ?>
-                            <br><a href="signup">New user?</a>
-                        <?php endif ?>
-                        <?php if (AllowForget): ?>
-                            <br><a href="forget">Forget your password?</a>
-                        <?php endif ?>
-
-                    </form>
-
-
-                </div>
+                </form>
 
 
+            </div>
 
 
             <?php
@@ -324,7 +321,7 @@ function do_login($dont_redirect = false)
         logged_in(); // fill userdata
 
         $cdata = getCurContest(TRUE);
-        if(checkrole('team') && $cdata['enabled'] && !calcFreezeData($cdata)['cstarted']) {
+        if (checkrole('team') && $cdata['enabled'] && !calcFreezeData($cdata)['cstarted']) {
             header('Location: ../public/countdown');
             exit;
         }

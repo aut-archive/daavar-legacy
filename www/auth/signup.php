@@ -128,16 +128,16 @@ if (isset($_REQUEST['dosignup'])) {
                 <label class="control-label" for="email">*Username:</label>
 
                 <div class="controls">
-                    <input class="input-xlarge" id="username" name="username" type="text" required="required"
+                    <input class="form-control input-xlarge" id="username" name="username" type="text" required="required"
                            placeholder="only letters,numbers and _" pattern="^[a-zA-Z0-9_-]+$">
                 </div>
             </div>
 
             <div class="control-group">
-                <label class="control-label" for="password">*Password :</label>
+                <label class="form-control control-label" for="password">*Password :</label>
 
                 <div class="controls">
-                    <input class="input-xlarge" id="password" name="password" type="password" required="required"
+                    <input class="form-control input-xlarge" id="password" name="password" type="password" required="required"
                            placeholder="choose a strong one">
                 </div>
             </div>
@@ -147,7 +147,7 @@ if (isset($_REQUEST['dosignup'])) {
                 <label class="control-label" for="email">*Email:</label>
 
                 <div class="controls">
-                    <input class="input-xlarge" id="email" name="email" type="email" required="required"
+                    <input class="form-control input-xlarge" id="email" name="email" type="email" required="required"
                            placeholder="Your Email">
                 </div>
             </div>
@@ -156,7 +156,7 @@ if (isset($_REQUEST['dosignup'])) {
                 <label class="control-label" for="teamname">*Team name :</label>
 
                 <div class="controls">
-                    <input class="input-xlarge" id="teamname" name="teamname" type="text" required="required"
+                    <input class="form-control input-xlarge" id="teamname" name="teamname" type="text" required="required"
                            placeholder="something cool">
                 </div>
             </div>
@@ -165,7 +165,7 @@ if (isset($_REQUEST['dosignup'])) {
                 <label class="control-label" for="members">*Members :</label>
 
                 <div class="controls">
-                    <textarea class="input-xlarge" id="members" name="members" type="text" rows="3"
+                    <textarea class="form-control input-xlarge" id="members" name="members" type="text" rows="3"
                               required="required" placeholder="who are you?!"></textarea>
                 </div>
             </div>
@@ -175,7 +175,7 @@ if (isset($_REQUEST['dosignup'])) {
                 <label class="control-label" for="description">Description:</label>
 
                 <div class="controls">
-                    <input class="input-xlarge" id="description" name="description" type="text"
+                    <input class="form-control input-xlarge" id="description" name="description" type="text"
                            placeholder="affiliation or ...">
                 </div>
             </div>
@@ -193,11 +193,12 @@ if (isset($_REQUEST['dosignup'])) {
                 <label class="control-label noselect" for="captcha"><?php echo $question ?></label>
 
                 <div class="controls">
-                    <input class="input-xlarge" id="captcha" name="captcha" type="text" placeholder=""
+                    <input class="form-control input-xlarge" id="captcha" name="captcha" type="text" placeholder=""
                            required="required" pattern="^\d+$">
                 </div>
             </div>
 
+            <br>
 
             <div style="text-align: center;">
                 <button class="btn btn-success" type="submit">Signup</button>
