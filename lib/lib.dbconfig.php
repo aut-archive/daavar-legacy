@@ -153,7 +153,7 @@ function dbconfig_get($name, $default = null, $cacheok = true)
     global $LIBDBCONFIG;
 
     if ($name == 'script_timelimit')
-        $name = 'timelimit';
+        $name = 'compile_time';
 
     if ((!isset($LIBDBCONFIG)) || (!$cacheok)) {
         dbconfig_init();
