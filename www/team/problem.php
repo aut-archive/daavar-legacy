@@ -28,7 +28,8 @@ if ($prob['problemtext_type'] != 'txt' && $prob['problemtext_type'] !='html') {
     putProblemText($id);
     exit;
 }
-
+                 echo $prob['problemtext'];
+                 exit;
 ?>
     <div class="container main-container">
 
