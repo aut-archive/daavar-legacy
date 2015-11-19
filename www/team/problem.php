@@ -7,7 +7,7 @@
 require_once('init.php');
 
 $title = htmlspecialchars($teamdata['name']);
-require(LIBWWWDIR . '/header.php');
+//require(LIBWWWDIR . '/header.php');
 require(LIBWWWDIR . '/forms.php');
 
 $id = getRequestID();
