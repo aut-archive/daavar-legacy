@@ -154,6 +154,8 @@ function dbconfig_get($name, $default = null, $cacheok = true)
 
     if ($name == 'script_timelimit')
         $name = 'compile_time';
+    if ($name == 'script_memory_limit')
+        $name = 'compile_memory';
 
     if ((!isset($LIBDBCONFIG)) || (!$cacheok)) {
         dbconfig_init();
