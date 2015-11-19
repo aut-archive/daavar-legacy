@@ -152,10 +152,13 @@ function dbconfig_get($name, $default = null, $cacheok = true)
 {
     global $LIBDBCONFIG;
 
+    /* API 5 Compablility */
     if ($name == 'script_timelimit')
         $name = 'compile_time';
     if ($name == 'script_memory_limit')
         $name = 'compile_memory';
+    if ($name == 'script_filesize_limit')
+        $name = 'filesize_limit';
 
     if ((!isset($LIBDBCONFIG)) || (!$cacheok)) {
         dbconfig_init();
