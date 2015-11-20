@@ -163,7 +163,7 @@ function show_loginpage($err_message = null)
                                         <input type="text" class="form-control input-block-level" placeholder="Username"
                                                id="login"
                                                name="login"
-                                               value="" size="15" maxlength="15" accesskey="l"
+                                               value="" accesskey="l"
                                                autofocus>
                                     </div>
                                     <div class="form-group">
