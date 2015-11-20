@@ -18,7 +18,7 @@ $list_file = @$_FILES['list_file']['tmp_name'];
 ?>
 
     <h1>CSV import</h1>
-    <h2 class="alert-danger">WARNING: BETA AND OBSOLETE FEATURE!</h2>
+<!--    <h2 class="alert-danger">WARNING: BETA AND OBSOLETE FEATURE!</h2>-->
     <br><br>
 <?php if (isset($_REQUEST['removal']) && isset($list_tag)): ?>
 
@@ -31,61 +31,41 @@ $list_file = @$_FILES['list_file']['tmp_name'];
 
         ?>
 
-        <br><a class="btn btn-success" href="autoimport.php">Done !</a>
+        <br><a class="btn btn-success" href="autoimport">Done !</a>
     </div>
 
 <?php else : if (isset($list_tag) && isset($list_file)) : ?>
 
-    <div>
+    <div class="container">
+        <br>
         <?php
         //====================================Import====================================
         $list = file_get_contents($list_file);
 
-        $l_teamname = NULL;
-        $l_team_users = array();
-        $l_team_mambers = '';
         $IP = $_SERVER['REMOTE_ADDR'];
-
         $all_usernames = array('admin', 'judgehost', 'judger', 'judge', 'test');
-
 
         foreach (explode("\n", $list) as &$user_str) {
             $user = str_getcsv($user_str);
             if ($user[0][0] == '#') continue;
 
-            $affilid = NULL; //$user[0];
-            $teamname = $user[1];
-            $full_name = $user[2];
-            $email = $user[3];
-            $comments = $user[4];
-
-            //Gen!
-            $username = explode('@', $email)[0];
+            $comments = "";
+            $username = $user[0];
             while (in_array($username, $all_usernames))
                 $username = $username . rand(0, 9);
-
-
             array_push($all_usernames, $username);
-
+            $full_name = $user[1];
+            $teamname = $user[1];
+            $affilid = intval($user[2]);
             $password = substr(base64_encode(md5(time() . $username . 'DUMMYYY')), 0, 6);
 
+            echo "Adding team $teamname<br>";
 
-            if ($l_teamname != NULL && $teamname != $l_teamname) {
-                echo "Adding team $teamname<br><br>\r\n";
-                $team_id = createTeam($l_teamname, SignupDefaultCategory, false, $l_team_mambers, "[$list_tag] $comments", $IP, $affilid);
+            $team_id = createTeam($full_name, SignupDefaultCategory, true, "", "[$list_tag] $comments", $IP, $affilid);
 
-                while ($u = array_pop($l_team_users)) {
-                    echo "Adding $full_name from $teamname@$affilid , username : $username<br>\r\n";
-                    createUser($u[0], $u[1], $u[2], $team_id, true, $u[3], $IP, SignupDefaultUserRole, true /*send email*/);
-                }
+            echo "Adding user for team $team_id<br>";
 
-                $l_team_mambers = '';
-                $l_team_users = array();
-            }
-
-            $l_team_mambers .= "$full_name\r\n";
-            array_push($l_team_users, array($username, $password, $email, $full_name));
-            $l_teamname = $teamname;
+            createUser($username, $password, "", $team_id, true, $full_name, $IP, SignupDefaultUserRole, false);
         }
 
         ?>
