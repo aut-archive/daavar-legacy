@@ -65,7 +65,7 @@ $list_file = @$_FILES['list_file']['tmp_name'];
 
             echo "Adding user for team $team_id<br>";
 
-            createUser($username, $password, "", $team_id, true, $full_name, $IP, SignupDefaultUserRole, false);
+            createUser($username, $password, $username, $team_id, true, $full_name, $IP, SignupDefaultUserRole, false);
         }
 
         ?>
