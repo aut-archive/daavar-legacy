@@ -1,0 +1,8 @@
+#!/bin/bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $DIR
+
+
+docker build -t daavar/core core
+docker build -t daavar/web web
+docker build -t daavar/judge judge

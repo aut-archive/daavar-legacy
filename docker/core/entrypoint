@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [ ! $# -eq 0 ] ; then
+    $@ 
+    exit
+fi
+
+echo "dummy:$MYSQL_HOST:$MYSQL_DATABASE:$MYSQL_USER:$MYSQL_PASSWORD" >  /dbpasswords.secret
+
+echo "default  $API_URL  $API_USER  $API_PASSWORD" > /restapi.secret
+
+cd /var/www
+mkdir -p workspace
+cd workspace
+mkdir -p log tmp submissions run
+cd ..
+chown www-data:www-data workspace -R
+
+[ -x /entrypoint ] && /entrypoint

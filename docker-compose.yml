@@ -1,0 +1,51 @@
+version: '2'
+
+services:
+
+    # Web service
+    daavar: 
+        image: daavar/web
+        env_file: 
+            - workspace/conf/mysql.conf
+            - workspace/conf/daavar.conf
+        volumes:
+           - ./src:/var/www
+        links:
+           - mysql
+        network_mode: bridge
+        restart: always
+
+
+    # Judge
+    judge: 
+        image: daavar/judge
+        env_file:
+            - workspace/conf/daavar.conf
+        #volumes:
+            # TODO
+        links:
+           - daavar
+        network_mode: bridge
+        restart: always
+
+
+    # Mysql database
+    mysql:
+       image: mariadb
+       env_file: workspace/conf/mysql.conf
+       volumes:
+          - ./workspace/mysql:/var/lib/mysql 
+       network_mode: bridge
+       restart: always
+    
+    # phpmyadmin
+    phpmyadmin:
+       image:  phpmyadmin/phpmyadmin
+       env_file: workspace/conf/phpmyadmin.conf
+       environment:
+         -  UPLOAD_SIZE=1G
+         -  PMA_HOST=mysql
+       links:
+         - mysql
+       network_mode: bridge
+       restart: always

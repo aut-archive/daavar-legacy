@@ -1,9 +1,14 @@
 .idea/
 *.iml
-.idea/workspace.xml
+
 etc/*.secret
+etc/*.conf
+
 log/*
 run/*
 tmp/*
+submissions/*
+workspace/*
+
 *.custom.php
 assets/custom

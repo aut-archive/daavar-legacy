@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cd /opt/domjudge/judgehost/etc
+
+echo "dummy:$MYSQL_HOST:$MYSQL_DATABASE:$MYSQL_USER:$MYSQL_PASSWORD" >  dbpasswords.secret
+
+echo "$API_URL  $API_USER  $API_PASSWORD" > restapi.secret
+
+judgedaemon

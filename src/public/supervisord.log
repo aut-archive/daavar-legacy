@@ -1,0 +1,17 @@
+2016-11-03 23:02:09,234 CRIT Supervisor running as root (no user in config file)
+2016-11-03 23:02:09,234 WARN No file matches via include "/etc/supervisor/conf.d/*.conf"
+2016-11-03 23:02:09,241 INFO supervisord started with pid 42
+2016-11-03 23:02:10,253 INFO spawned: 'nginx' with pid 45
+2016-11-03 23:02:10,273 INFO spawned: 'php' with pid 46
+2016-11-03 23:02:10,517 INFO exited: php (exit status 78; not expected)
+2016-11-03 23:02:11,327 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-11-03 23:02:11,839 INFO spawned: 'php' with pid 47
+2016-11-03 23:02:12,000 INFO exited: php (exit status 78; not expected)
+2016-11-03 23:02:12,844 INFO exited: nginx (exit status 1; not expected)
+2016-11-03 23:02:13,863 INFO spawned: 'nginx' with pid 48
+2016-11-03 23:02:14,422 INFO spawned: 'php' with pid 49
+2016-11-03 23:02:14,578 INFO exited: php (exit status 78; not expected)
+2016-11-03 23:02:14,911 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-11-03 23:02:16,055 WARN received SIGINT indicating exit request
+2016-11-03 23:02:16,056 INFO waiting for nginx to die
+2016-11-03 23:02:16,419 INFO stopped: nginx (terminated by SIGTERM)

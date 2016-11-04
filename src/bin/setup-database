@@ -5,7 +5,7 @@
 set -e
 
 ETCDIR="../etc"
-SQLDIR="../sql"
+SQLDIR="../lib/sql"
 
 PASSWDFILE="$ETCDIR/dbpasswords.secret"
 RESTPWFILE="$ETCDIR/restapi.secret"

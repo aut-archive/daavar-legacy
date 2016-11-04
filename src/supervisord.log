@@ -1,0 +1,35 @@
+2016-11-03 23:04:32,009 CRIT Supervisor running as root (no user in config file)
+2016-11-03 23:04:32,009 WARN No file matches via include "/etc/supervisor/conf.d/*.conf"
+2016-11-03 23:04:32,015 INFO supervisord started with pid 13
+2016-11-03 23:04:33,028 INFO spawned: 'nginx' with pid 16
+2016-11-03 23:04:33,040 INFO spawned: 'php' with pid 17
+2016-11-03 23:04:34,278 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-11-03 23:04:34,279 INFO success: php entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-11-03 23:14:21,553 CRIT Supervisor running as root (no user in config file)
+2016-11-03 23:14:21,553 WARN No file matches via include "/etc/supervisor/conf.d/*.conf"
+2016-11-03 23:14:21,559 INFO supervisord started with pid 14
+2016-11-03 23:14:22,567 INFO spawned: 'nginx' with pid 17
+2016-11-03 23:14:22,589 INFO spawned: 'php' with pid 18
+2016-11-03 23:14:23,776 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-11-03 23:14:23,776 INFO success: php entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-11-03 23:18:27,880 CRIT Supervisor running as root (no user in config file)
+2016-11-03 23:18:27,880 WARN No file matches via include "/etc/supervisor/conf.d/*.conf"
+2016-11-03 23:18:27,890 INFO supervisord started with pid 13
+2016-11-03 23:18:28,900 INFO spawned: 'nginx' with pid 16
+2016-11-03 23:18:28,917 INFO spawned: 'php' with pid 17
+2016-11-03 23:18:30,089 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-11-03 23:18:30,089 INFO success: php entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-11-04 00:05:32,024 CRIT Supervisor running as root (no user in config file)
+2016-11-04 00:05:32,025 WARN No file matches via include "/etc/supervisor/conf.d/*.conf"
+2016-11-04 00:05:32,040 INFO supervisord started with pid 13
+2016-11-04 00:05:33,051 INFO spawned: 'nginx' with pid 16
+2016-11-04 00:05:33,072 INFO spawned: 'php' with pid 17
+2016-11-04 00:05:34,285 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-11-04 00:05:34,286 INFO success: php entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-11-04 00:12:14,451 CRIT Supervisor running as root (no user in config file)
+2016-11-04 00:12:14,451 WARN No file matches via include "/etc/supervisor/conf.d/*.conf"
+2016-11-04 00:12:14,458 INFO supervisord started with pid 12
+2016-11-04 00:12:15,476 INFO spawned: 'nginx' with pid 15
+2016-11-04 00:12:15,491 INFO spawned: 'php' with pid 16
+2016-11-04 00:12:16,690 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2016-11-04 00:12:16,690 INFO success: php entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
