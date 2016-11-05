@@ -1,4 +1,6 @@
-**This Repo is not anymore maintained**
+**THIS REPO IS NOT MAINTAINED ANYMORE, PLEASE OPEN AN ISSUE IF YOU WANT TO CONTINUE**
+
+**LAST REBASED WITH COMMIT [befaa62459530b62f4d2b947eac95299d1de5010](https://github.com/DOMjudge/domjudge/tree/befaa62459530b62f4d2b947eac95299d1de5010) OF DOMJUDGE **
 
 # Daavar Web
 Daavar Programming Contest judge system based on domjudge. DOMjudge is a system for running a programming contest, like the ACM ICPC regional and world championship programming contests.
