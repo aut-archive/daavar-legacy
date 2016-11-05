@@ -1,6 +1,14 @@
 **THIS REPO IS NOT MAINTAINED ANYMORE, PLEASE OPEN AN ISSUE IF YOU WANT TO CONTINUE**
 
-**LAST REBASED WITH COMMIT [befaa62459530b62f4d2b947eac95299d1de5010](https://github.com/DOMjudge/domjudge/tree/befaa62459530b62f4d2b947eac95299d1de5010) OF DOMJUDGE **
+LAST REBASED WITH COMMIT [befaa62459530b62f4d2b947eac95299d1de5010](https://github.com/DOMjudge/domjudge/tree/befaa62459530b62f4d2b947eac95299d1de5010) OF DOMJUDGE.
+
+You can use [This](https://quay.io/repository/daavar/judgehost) Docker Image for JudgeHost source steps unfortunatly are lost so please DONT ASK FOR DOCKERFILE.
+```bash
+docker pull quay.io/daavar/judgehost
+docker run -it --rm judgehost
+```
+
+You may also prefer original [Dockerized Domjudge](https://github.com/daavar/domjudge)
 
 # Daavar Web
 Daavar Programming Contest judge system based on domjudge. DOMjudge is a system for running a programming contest, like the ACM ICPC regional and world championship programming contests.
